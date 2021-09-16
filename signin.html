@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>Registrarse con Don Jose Soto</title>
+        <link rel="stylesheet" href="loginstyle.css">
+        <script></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="title-text">
+                <div class="title signup">Registrarse</div>
+            </div>
+            <div class="form-container">
+                <div class="form-inner">
+                    <!--reg-->
+                    <form action="inicio.html" class="signup">
+                        <div class="error-text"></div>
+                        <div class="field">
+                            <input type="text" placeholder="Correo Electrónico" required>
+                        </div>
+                        <div class="field">
+                            <input id="pwd_1" type="password" placeholder="Contraseña" required>
+                        </div>
+                        <div class="field">
+                            <input id="pwd_2" type="password" placeholder="Confirmar contraseña" required>
+                        </div>
+                        <div class="field">
+                            <input id="btn" type="submit" value="Registrarse">
+                        </div>
+                        <div class="login-link">Ya tienes una cuenta? <a href="login.html">Iniciar Sesión</a></div>
+                    </form> 
+                </div>
+                <script>
+                    const btn1=document.querySelector("#btn");
+                    const pwd_1=document.querySelector("#pwd_1");
+                    const pwd_2=document.querySelector("#pwd_2");
+                    const errorText = document.querySelector(".error-text");
+                    btn1.onclick = function(){
+                        if(pwd_1.value != pwd_2.value){
+                            errorText.style.display = "block";
+                            errorText.style.background = "#F8D7DA";
+                            errorText.style.color ="#8B3E46";
+                            errorText.textContent="Error las contraseñas no coinciden";
+                            return false;
+                        }else{
+                            errorText.style.display = "block";
+                            errorText.style.background = "#27ae60";
+                            errorText.style.color = "#f2f2f2";
+                            errorText.textContent="Registro Existoso";
+                            return true;
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
